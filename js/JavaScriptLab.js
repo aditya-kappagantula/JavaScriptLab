@@ -46,39 +46,39 @@ xArray.slice(1,3); //end index not included
 
 5 + null    // returns 5         because null is converted to 0
 "5" + null  // returns "5null"   because null is converted to "null"
-"5" + 1     // returns "51"      because 1 is converted to "1"  
+"5" + 1     // returns "51"      because 1 is converted to "1"
 "5" - 1     // returns 4         because "5" is converted to 5
-1+undefined	// returns NaN
-1+NaN		// returns NaN
-" " - " "	// returns NaN
+1+undefined // returns NaN
+1+NaN       // returns NaN
+" " - " "   // returns NaN
 
 var y = "hi";   // y is a string
 var x = + y;      // x is a number (NaN)
 Number(false);     // returns 0
 Number(true);      // returns 1
 Number("3.14");    // returns 3.14
-Number(" ");       // returns 0 
+Number(" ");       // returns 0
 Number("");        // returns 0
 Number("99 88");   // returns NaN
 Number("1.1.1");   // returns NaN
-Number("null");	  // returns 0
-Number("underfined");	// returns NaN
-Number([]);			//returns 0
-Number([12]);		//returns 12
+Number("null");   // returns 0
+Number("underfined");   // returns NaN
+Number([]);         //returns 0
+Number([12]);       //returns 12
 
 false.toString();     // returns "false"
 true.toString();      // returns "true"
-[1,2,3].toString();	//returns 1,2,3
+[1,2,3].toString(); //returns 1,2,3
 
-Boolean("");		//returns false
-Boolean(NaN);	//returns false
-Boolean(null);	//returns false
-Boolean(undefined);		//returns false
+Boolean("");        //returns false
+Boolean(NaN);   //returns false
+Boolean(null);  //returns false
+Boolean(undefined);     //returns false
 
-{}.toString();	//[object Object]
+{}.toString();  //[object Object]
 
 
 //hoisting
-var x = 5; 
+var x = 5;
 console.log(x+y); //prints NaN
-var y=7;    
+var y=7;
