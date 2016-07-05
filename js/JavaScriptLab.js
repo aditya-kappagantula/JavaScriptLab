@@ -82,3 +82,12 @@ Boolean(undefined);     //returns false
 var x = 5;
 console.log(x+y); //prints NaN
 var y=7;
+
+//Scope
+var a=b=3; // b=3; var a=b; b is in global scope and a in local scope
+(function(){
+    var a = b = 3;
+})();
+console.log(typeof a);//"undefined"
+console.log(b);//3
+
