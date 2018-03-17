@@ -83,11 +83,69 @@ var x = 5;
 console.log(x+y); //prints NaN
 var y=7;
 
-//Scope
+// Scope
 var a=b=3; // b=3; var a=b; b is in global scope and a in local scope
 (function(){
     var a = b = 3;
 })();
-console.log(typeof a);//"undefined"
+console.log(typeof a);//"number", because scope of a is number in global scope.
 console.log(b);//3
+
+// Scope
+(function(){
+    var a = b = 3; b=3; var a=b; b is in global scope and a in local scope
+})();
+console.log(typeof a);//"undefined"
+
+// Scope
+function foo() {
+  var x = 10;
+  return {
+    a: 'hello',
+    b: x+1
+  };
+}
+console.log(foo().b); // prints 11, because x lies within the scope of the function.
+
+// Scope
+var x = 10;
+function foo() {
+  console.log(x); // prints 10, because there is no variable hoisting yet.
+  x = 20;
+  return {
+    a: 'hello',
+    b: x+1
+  };
+}
+console.log(foo().b); // prints 21 because x is modified again in local scope. Function retrieves x value from window scope as it can find it in the current scope
+console.log(x); // 20
+
+// Scope
+var x = 10;
+function foo() {
+  console.log(x); // prints undefined, because var x gets hoisted.
+  var x = 20;
+  return {
+    a: 'hello',
+    b: x+1
+  };
+}
+
+// Scope
+var x = 10;
+function foo() {
+  let x = 20;
+  return {
+    a:10,
+    b: x+1
+  }
+}
+/**
+ * Prints 21. as x gets updated locally in function scope
+ */
+console.log(foo().b);
+/**
+ * Prints 10, as x inside function is declared using let [block] scope.
+ */
+console.log(x);
 
